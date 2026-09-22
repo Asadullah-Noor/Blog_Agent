@@ -178,7 +178,6 @@ Grounding rules:
 Output must strictly match the Plan schema.
 """
 def orchestrator_node(state: State) -> dict:
-    planner = llm.with_structured_output(Plan)
     evidence = state.get("evidence", [])
     mode = state.get("mode", "closed_book")
     plan = planner.invoke(
